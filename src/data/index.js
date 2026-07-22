@@ -5,7 +5,7 @@ const person = {
   email: "himanshi16205@gmail.com",
 };
 
-const siteUrl = "https://dheerajbuilds.com";
+const siteUrl = "https://himanshijain.vercel.app";
 
 export const siteConfig = {
   person,
@@ -13,9 +13,9 @@ export const siteConfig = {
     siteUrl,
     title: "Portfolio of Himanshi Jain",
     description:
-      "Portfolio of Himanshi Jain - full-stack engineer building AI-first products, systems, and polished web experiences.",
+      "Portfolio of Himanshi Jain - building AI-enabled products, systems, and polished web experiences.",
     icon: `${siteUrl}/global/Site_Icon.svg`,
-    shareImage: `${siteUrl}/screenshots/Thumbnail.png`,
+    shareImage: `${siteUrl}/global/Site-Share-Photo-new.png`,
   },
   navigation: {
     badgeLabel: "Himanshi Jain © 2026",
