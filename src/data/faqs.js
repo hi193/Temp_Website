@@ -2,7 +2,7 @@ export const faqItems = [
   {
     question: "What kinds of projects do you work on?",
     answer:
-      "AI-driven products, full-stack web apps, developer tools, and systems-focused builds. I enjoy shipping products that solve real problems.",
+      "AI-driven interfaces, responsive web apps, SaaS dashboards, and digital platforms. I enjoy designing products that solve real problems.",
   },
   {
     question: "Are you open to freelance or full-time roles?",
@@ -10,14 +10,14 @@ export const faqItems = [
       "Yes. I am open to full-time roles, freelance work, and project-based collaborations. Use the contact form to start a conversation.",
   },
   {
-    question: "Do you handle end-to-end development?",
+    question: "Do you handle end-to-end design?",
     answer:
-      "Yes. I can take a project from discovery and design through engineering, deployment, and iteration.",
+      "Yes. I can take a project from discovery and wireframing through high-fidelity design, prototyping, and handoff to engineering.",
   },
   {
-    question: "What technologies do you use?",
+    question: "What tools do you use?",
     answer:
-      "React, Next.js, TypeScript, Node.js, Tailwind CSS, Docker, Kubernetes, and modern AI APIs. I choose tools based on product needs.",
+      "Figma, Framer, Adobe Creative Suite, Webflow, HTML/CSS, React, and modern AI design tools. I choose tools based on project needs.",
   },
   {
     question: "Do you work remotely or on-site?",
@@ -27,7 +27,7 @@ export const faqItems = [
   {
     question: "Do you collaborate with teams?",
     answer:
-      "Yes. I regularly collaborate with designers, PMs, and engineers to ship features quickly and cleanly.",
+      "Yes. I regularly collaborate with other designers, PMs, and engineers to ship features quickly and cleanly.",
   },
   {
     question: "How long does a project usually take?",
@@ -42,7 +42,7 @@ export const faqItems = [
   {
     question: "Where can I see your projects?",
     answer:
-      "Check the Projects section on this site or my GitHub for live demos and repositories.",
+      "Check the Projects section on this site or my Behance for live demos and case studies.",
   },
   {
     question: "How can I reach you?",

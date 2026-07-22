@@ -50,7 +50,7 @@ export const siteConfig = {
       copyright: "© 2026",
       title: "Start a Project",
       description:
-        "Have a product idea, an AI workflow, or a system challenge? Share the details and I’ll reply with next steps.",
+        "Have a product idea, a complex user journey, or a design challenge? Share the details and I’ll reply with next steps.",
       availability: ["Open to opportunities", "Remote or on-site"],
       placeholders: {
         name: "Name",
@@ -68,14 +68,14 @@ export const siteConfig = {
     introHeading: "with care and product intuition",
     introStateLabel: "/ Core State /",
     stickyNav: ["About Me", "Let’s Connect"],
-    stickyFooter: ["Engineering with Intent", "Open to Collaborations"],
+    stickyFooter: ["Designing with Intent", "Open to Collaborations"],
     stickyTitles: [
-      "I build full-stack products",
+      "I design digital products",
       "shape clean interfaces",
-      "and turn messy ideas into systems",
+      "and turn messy ideas into seamless experiences",
     ],
     workHeaderSuffix: "selects",
-    hobbies: ["Systems", "AI", "Web", "Product"],
+    hobbies: ["Design Systems", "UI/UX", "Web", "Product"],
   },
   about: {
     establishedLabel: "Est",
@@ -105,7 +105,7 @@ export const siteConfig = {
       "This space is a running log of experiments, shipping notes, and design instincts tested in the wild.",
     outroTags: [
       "Product Thinking",
-      "Systems",
+      "Design Systems",
       "AI x UX",
       "Critical Thinking",
       "Teamwork",
@@ -119,8 +119,8 @@ export const siteConfig = {
       { id: "T98-462", image: "/project/Logofy.jpeg" },
     ],
     intro: [
-      "I'm " + person.fullName + " — a computer science student and full-stack developer focused on systems and AI. I enjoy building practical products with clean architecture and strong UX.",
-      "I care about clarity, performance, and scalable design. Whether it’s an AI workflow, a SaaS app, or a developer tool, I aim for reliability and impact.",
+      "I'm " + person.fullName + " — a computer science student and UI/UX designer focused on digital experiences and AI. I enjoy crafting practical products with clean aesthetics and strong UX.",
+      "I care about clarity, accessibility, and scalable design. Whether it’s an AI workflow, a SaaS app, or a digital platform, I aim for usability and impact.",
       "Every project is a chance to learn, iterate, and ship. If it solves a real problem and feels solid to use, it’s a win.",
     ],
   },
