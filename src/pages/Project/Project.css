@@ -1,0 +1,251 @@
+.project-back-btn {
+  position: fixed;
+  top: 6em;
+  left: 2em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 1.25em;
+  font-family: "Messina Sans", sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  color: #ffffff;
+  mix-blend-mode: difference;
+  z-index: 50;
+  transition: opacity 0.3s ease;
+}
+
+.project-back-btn:hover {
+  opacity: 0.6;
+}
+
+.project-header {
+  width: 100vw;
+  height: 50svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.5em;
+  padding-bottom: 3em;
+  text-align: center;
+}
+
+.project-banner-img {
+  position: relative;
+  width: 100svw;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.project-banner-img-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.project-details {
+  width: 100%;
+  max-width: 800px;
+  padding: 120px 24px 64px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-markdown-content {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  font-family: "Messina Sans", sans-serif;
+}
+
+.project-markdown-content h1 {
+  font-size: 64px;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  font-weight: 800;
+  color: #111111;
+  letter-spacing: -0.02em;
+}
+
+.project-markdown-content h2 {
+  font-size: 48px;
+  line-height: 1.2;
+  margin-top: 48px;
+  margin-bottom: 24px;
+  font-weight: 700;
+  color: #111111;
+  letter-spacing: -0.01em;
+}
+
+.project-markdown-content h3 {
+  font-size: 32px;
+  margin-top: 48px;
+  margin-bottom: 16px;
+  font-weight: 700;
+  color: #111111;
+}
+
+.project-markdown-content p {
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--fg);
+  opacity: 0.85;
+}
+
+.project-markdown-content ul {
+  list-style: disc;
+  padding-left: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-markdown-content li {
+  font-size: 20px;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.project-markdown-content hr {
+  border: none;
+  border-top: 1px solid var(--fg);
+  opacity: 0.15;
+  margin: 32px 0;
+}
+
+.project-markdown-content strong {
+  font-weight: 800;
+  color: #111111;
+  opacity: 1;
+}
+
+.project-markdown-content em {
+  font-style: normal;
+  font-weight: 700;
+  background-color: #4ade80;
+  color: #111111;
+  padding: 4px 12px;
+  border-radius: 12px;
+  margin-right: 8px;
+  display: inline-block;
+  letter-spacing: 0.02em;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.project-images {
+  background-color: var(--fg);
+  color: var(--bg);
+  padding: 4em 2em;
+}
+
+.project-images-container {
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.project-img {
+  position: relative;
+  width: 100%;
+  height: 80svh;
+  overflow: hidden;
+}
+
+.project-img-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.next-project {
+  width: 100vw;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+  text-align: center;
+  text-decoration: none;
+  color: var(--fg);
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.next-project:hover {
+  opacity: 0.8;
+}
+
+.next-project-img {
+  position: relative;
+  width: 35%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.next-project-img-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 1000px) {
+  .project-back-btn {
+    top: 5em;
+    left: 1.25em;
+  }
+
+  .project-header {
+    padding: 1.25em 1.25em 3em 1.25em;
+  }
+
+  .project-details {
+    padding: 96px 24px 64px;
+  }
+
+  .project-markdown-content h1 { font-size: 48px; }
+  .project-markdown-content h2 { font-size: 32px; margin-top: 48px; }
+  .project-markdown-content h3 { font-size: 24px; margin-top: 32px; }
+  .project-markdown-content p, .project-markdown-content li { font-size: 16px; }
+
+  .project-images {
+    padding: 4em 1.25em;
+  }
+
+  .project-images-container {
+    width: 100%;
+    gap: 1.25em;
+  }
+
+  .next-project {
+    padding: 1.25em;
+  }
+
+  .next-project-img {
+    width: 75%;
+  }
+
+  .project-img {
+    height: 65svh;
+  }
+}

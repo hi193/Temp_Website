@@ -1,0 +1,133 @@
+import "./ProjectCarousel.css";
+import { useRef } from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+
+import projects from "../../data/projects";
+
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const ProjectCarousel = () => {
+  const sectionRef = useRef(null);
+  const stageRef = useRef(null);
+  const trackRef = useRef(null);
+
+  useGSAP(
+    () => {
+      const mm = gsap.matchMedia();
+
+      mm.add("(min-width: 1000px)", () => {
+        const section = sectionRef.current;
+        const stage = stageRef.current;
+        const track = trackRef.current;
+
+        if (!section || !stage || !track) return;
+
+        // Distance is computed on demand so refreshes reflect dynamic content widths.
+        const getDistance = () => Math.max(0, track.scrollWidth - stage.clientWidth);
+        const getEndDistance = () =>
+          Math.max(getDistance() + window.innerHeight * 0.35, window.innerHeight * 0.8);
+
+        const tween = gsap.to(track, {
+          x: () => -getDistance(),
+          ease: "none",
+          scrollTrigger: {
+            trigger: section,
+            start: "top top",
+            end: () => `+=${getEndDistance()}`,
+            scrub: 1,
+            pin: true,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+          },
+        });
+
+        return () => {
+          if (tween.scrollTrigger) {
+            tween.scrollTrigger.kill();
+          }
+          tween.kill();
+        };
+      });
+
+      mm.add("(max-width: 999px)", () => {
+        if (trackRef.current) {
+          // Mobile keeps native vertical flow instead of pinned horizontal motion.
+          gsap.set(trackRef.current, { clearProps: "transform" });
+        }
+      });
+
+      return () => {
+        mm.revert();
+      };
+    },
+    { scope: sectionRef }
+  );
+
+  return (
+    <section className="fieldwork-routine" id="case-studies" ref={sectionRef}>
+      <div className="fieldwork-routine-header">
+        <h2>Sneak peak of my work</h2>
+      </div>
+
+      <div className="fieldwork-routine-stage" ref={stageRef}>
+        <div className="fieldwork-routine-track" ref={trackRef}>
+          {projects.map((project, index) => (
+            <article className="fieldwork-card" key={project.id}>
+              {project.underConstruction ? (
+                <div className="fieldwork-card-image" style={{ cursor: 'not-allowed' }}>
+                  <img src={project.image} alt={project.title} loading="lazy" />
+                  <div className="view-more-overlay">
+                    <span className="view-more-btn" style={{ background: '#333', color: '#fff' }}>Under Construction</span>
+                  </div>
+                </div>
+              ) : (
+                <Link to={`/project/${project.id}`} className="fieldwork-card-image">
+                  <img src={project.image} alt={project.title} loading="lazy" />
+                  <div className="view-more-overlay">
+                    <span className="view-more-btn">View More</span>
+                  </div>
+                </Link>
+              )}
+
+              <div className="fieldwork-card-copy">
+                <div className="fieldwork-card-top">
+                  <span>{project.tags ? project.tags.join(" | ") : ""}</span>
+                </div>
+
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+
+                {project.externalLink ? (
+                  <a
+                    className="fieldwork-card-link"
+                    href={project.externalLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <ArrowRight size={14} strokeWidth={2.25} aria-hidden="true" />
+                    {project.externalLinkLabel || "View client"}
+                  </a>
+                ) : (
+                  <Link
+                    className="fieldwork-card-link"
+                    to={`/project/${project.id}`}
+                  >
+                    <ArrowRight size={14} strokeWidth={2.25} aria-hidden="true" />
+                    View case study
+                  </Link>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ProjectCarousel;
